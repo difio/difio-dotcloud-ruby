@@ -16,27 +16,42 @@ Installing on your dotCloud Ruby application
         gem 'monupco-dotcloud-ruby'
         ...
 
-- Set your userID in the ./data/MONUPCO_SETTINGS file
+- Enable the registration script in your postinstall hook. **Note:**
+If you are using an "approot" your `postinstall` script should be in the 
+directory pointed by the “approot” directive of your `dotcloud.yml`.
+For more information about `postinstall` turn to 
+http://docs.dotcloud.com/guides/postinstall/.
 
-        echo "export MONUPCO_USER_ID=YourUserID"  > ./data/MONUPCO_SETTINGS
+If a file named `postinstall` doesn't already exist, create it and add the following:
 
-- Enable the registration script in .openshift/action_hooks/post_deploy
+        #!/bin/sh
+        bundle exec /home/dotcloud/vendor/bundle/ruby/1.8/bin/monupco-dotcloud
 
-        cd $OPENSHIFT_REPO_DIR
-        source data/MONUPCO_SETTINGS
-        bundle exec vendor/bundle/ruby/1.8/bin/monupco-openshift-express
+- Make `postinstall` executable
 
-- Run bundle install to install the monupco gems
+        chmod a+x postinstall
+
+- Run bundle install to install the monupco gems locally and regenerate Gemfile.lock
 
         bundle install
 
-- Commit your changes
+- Commit your changes (if using git):
 
         git add .
         git commit -m "enable monupco registration"
 
-- Then push your application to OpenShift
+- Set your monupco user id. You can get it from https://monupco-otb.rhcloud.com/profiles/mine/.
 
-        git push
+        dotcloud var set <app name> MONUPCO_USER_ID=UserID
 
-That's it, you can now check your application statistics at <http://monupco.com>
+- Then push your application to dotCloud
+
+        dotcloud push <app name>
+
+- If everything goes well you should see something like:
+
+        19:55:10 [www.0] Running postinstall script...
+        19:55:13 [www.0] response:200
+        19:55:13 [www.0] Monupco: Success, registered/updated application with id 35
+
+That's it, you can now check your application statistics at http://monupco.com
