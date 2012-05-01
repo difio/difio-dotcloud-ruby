@@ -31,10 +31,6 @@ If a file named `postinstall` doesn't already exist, create it and add the follo
 
         chmod a+x postinstall
 
-- Run bundle install to install the monupco gems locally and regenerate Gemfile.lock
-
-        bundle install
-
 - Commit your changes (if using git):
 
         git add .
