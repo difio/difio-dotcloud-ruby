@@ -25,7 +25,7 @@ http://docs.dotcloud.com/guides/postinstall/.
 If a file named `postinstall` doesn't already exist, create it and add the following:
 
         #!/bin/sh
-        bundle exec /home/dotcloud/vendor/bundle/ruby/1.8/bin/monupco-dotcloud
+        bundle exec monupco-dotcloud
 
 - Make `postinstall` executable
 
