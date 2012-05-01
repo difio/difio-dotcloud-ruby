@@ -25,6 +25,7 @@ http://docs.dotcloud.com/guides/postinstall/.
 If a file named `postinstall` doesn't already exist, create it and add the following:
 
         #!/bin/sh
+        cd /home/dotcloud/code
         bundle exec monupco-dotcloud
 
 - Make `postinstall` executable
