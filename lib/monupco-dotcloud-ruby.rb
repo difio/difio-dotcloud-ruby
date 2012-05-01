@@ -2,7 +2,7 @@ require "common-ruby-monupco"
 require "json"
 
 module Monupco
-    class dotCloud < Monupco::MonupcoBase
+    class Dotcloud < Monupco::MonupcoBase
         json = File.read('/home/dotcloud/environment.json')
         dotcloud_env = JSON.parse(json)
 

@@ -4,7 +4,7 @@ require "monupco-dotcloud-ruby/version"
 
 Gem::Specification.new do |s|
   s.name        = "monupco-dotcloud-ruby"
-  s.version     = Monupco::dotCloud::VERSION
+  s.version     = Monupco::Dotcloud::VERSION
   s.authors     = ["Alexander Todorov"]
   s.email       = ["atodorov@otb.bg"]
   s.homepage    = "http://github.com/monupco/monupco-dotcloud-ruby"
