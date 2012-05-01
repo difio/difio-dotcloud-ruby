@@ -2,4 +2,4 @@
 
 require "monupco-dotcloud-ruby"
 
-Monupco::dotCloud.new.cli
+Monupco::Dotcloud.new.cli
