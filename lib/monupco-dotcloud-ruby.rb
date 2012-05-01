@@ -1,14 +1,17 @@
 require "common-ruby-monupco"
+require "json"
 
 module Monupco
     class dotCloud < Monupco::MonupcoBase
-# todo: load 'env' from /home/dotcloud/environment.json
+        json = File.read('/home/dotcloud/environment.json')
+        dotcloud_env = JSON.parse(json)
+
         configure({
-            'user_id'  => env['MONUPCO_USER_ID'],
-            'app_name' => env['DOTCLOUD_PROJECT'] + '.' + env['DOTCLOUD_SERVICE_NAME'],
-            'app_uuid' => env['DOTCLOUD_WWW_HTTP_HOST'],
+            'user_id'  => dotcloud_env['MONUPCO_USER_ID'],
+            'app_name' => dotcloud_env['DOTCLOUD_PROJECT'] + '.' + dotcloud_env['DOTCLOUD_SERVICE_NAME'],
+            'app_uuid' => dotcloud_env['DOTCLOUD_WWW_HTTP_HOST'],
             'app_type' => 'Ruby',
-            'app_url'  => env['DOTCLOUD_WWW_HTTP_URL'],
+            'app_url'  => dotcloud_env['DOTCLOUD_WWW_HTTP_URL'],
             'app_vendor' => 1,
             'url' => ENV['MONUPCO_REGISTER_URL'],
         })
