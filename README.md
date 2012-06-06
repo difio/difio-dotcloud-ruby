@@ -12,11 +12,11 @@ Installing on your dotCloud Ruby application
 
 - Configure your Monupco userID. You can get it from https://monupco-otb.rhcloud.com/profiles/mine/
 
-    dotcloud var set <app name> MONUPCO_USER_ID=UserID
+        dotcloud var set <app name> MONUPCO_USER_ID=UserID
 
 - Generate a unique identifier for this application and save the value as environmental variable.
 
-    dotcloud var set <app name> MONUPCO_UUID=`uuidgen`
+        dotcloud var set <app name> MONUPCO_UUID=`uuidgen`
 
 - Add a dependency in your application's Gemfile
 
