@@ -9,7 +9,7 @@ module Monupco
         configure({
             'user_id'  => dotcloud_env['MONUPCO_USER_ID'],
             'app_name' => dotcloud_env['DOTCLOUD_PROJECT'] + '.' + dotcloud_env['DOTCLOUD_SERVICE_NAME'],
-            'app_uuid' => dotcloud_env['DOTCLOUD_WWW_HTTP_HOST'],
+            'app_uuid' => dotcloud_env['MONUPCO_UUID'],
             'app_type' => 'Ruby',
             'app_url'  => dotcloud_env['DOTCLOUD_WWW_HTTP_URL'],
             'app_vendor' => 1,

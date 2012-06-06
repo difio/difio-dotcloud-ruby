@@ -8,7 +8,15 @@ Installing on your dotCloud Ruby application
 
 - Create an account at http://monupco.com
 
-- Create your Ruby application in dotCloud
+- Create your Ruby application in dotCloud and push it
+
+- Configure your Monupco userID. You can get it from https://monupco-otb.rhcloud.com/profiles/mine/
+
+    dotcloud var set <app name> MONUPCO_USER_ID=UserID
+
+- Generate a unique identifier for this application and save the value as environmental variable.
+
+    dotcloud var set <app name> MONUPCO_UUID=`uuidgen`
 
 - Add a dependency in your application's Gemfile
 
@@ -36,10 +44,6 @@ If a file named `postinstall` doesn't already exist, create it and add the follo
 
         git add .
         git commit -m "enable monupco registration"
-
-- Set your monupco user id. You can get it from https://monupco-otb.rhcloud.com/profiles/mine/.
-
-        dotcloud var set <app name> MONUPCO_USER_ID=UserID
 
 - Then push your application to dotCloud
 
