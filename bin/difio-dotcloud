@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require "monupco-dotcloud-ruby"
+require "difio-dotcloud-ruby"
 
-Monupco::Dotcloud.new.cli
+Difio::Dotcloud.new.cli

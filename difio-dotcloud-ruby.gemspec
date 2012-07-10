@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "monupco-dotcloud-ruby/version"
+require "difio-dotcloud-ruby/version"
 
 Gem::Specification.new do |s|
-  s.name        = "monupco-dotcloud-ruby"
-  s.version     = Monupco::Dotcloud::VERSION
+  s.name        = "difio-dotcloud-ruby"
+  s.version     = Difio::Dotcloud::VERSION
   s.authors     = ["Alexander Todorov"]
-  s.email       = ["atodorov@otb.bg"]
-  s.homepage    = "http://github.com/monupco/monupco-dotcloud-ruby"
-  s.summary     = %q{monupco.com registration agent for dotCloud / Ruby applications}
-  s.description = %q{monupco.com registration agent for dotCloud / Ruby applications. See the README for usage.}
+  s.email       = ["atodorov@dif.io"]
+  s.homepage    = "http://github.com/difio/difio-dotcloud-ruby"
+  s.summary     = %q{Difio registration agent for dotCloud / Ruby applications}
+  s.description = %q{Difio registration agent for dotCloud / Ruby applications. See the README for usage.}
 
-  s.rubyforge_project = "monupco-dotcloud-ruby"
+  s.rubyforge_project = "difio-dotcloud-ruby"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
-  s.add_runtime_dependency "common-ruby-monupco"
+  s.add_runtime_dependency "common-ruby-difio"
   s.add_runtime_dependency "json"
 end
