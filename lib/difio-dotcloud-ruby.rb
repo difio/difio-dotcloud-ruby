@@ -10,7 +10,7 @@ module Difio
             'user_id'  => dotcloud_env['DIFIO_USER_ID'],
             'app_name' => dotcloud_env['DOTCLOUD_PROJECT'] + '.' + dotcloud_env['DOTCLOUD_SERVICE_NAME'],
             'app_uuid' => dotcloud_env['DIFIO_UUID'],
-            'app_type' => 'Ruby',
+            'app_type' => 'ruby-' + RUBY_VERSION,
             'app_url'  => dotcloud_env['DOTCLOUD_WWW_HTTP_URL'],
             'app_vendor' => 1,
             'url' => ENV['DIFIO_REGISTER_URL'],
